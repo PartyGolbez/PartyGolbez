@@ -4,6 +4,9 @@ WORDLISTTEMPDIR=~/_temphatecrackwordlists
 WORDLISTFINALDIR=/opt/SecLists/Passwords/optimized_wordlists
 WORDLISTPACKEDFILE=$WORDLISTFINALDIR/seclists_packed.txt
 
+echo 'Checking that all the files exist...'
+if ! (./checkfiles.sh ordered-wordlists.txt); then echo 'Not all files found, exiting!'; exit 1; fi
+
 echo 'Installing duplicut... (it might be already installed, just ignore the errors in that case!)'
 git clone https://github.com/nil0x42/duplicut $DUPLICUTDIR && cd $DUPLICUTDIR && make
 
@@ -24,5 +27,6 @@ echo "Here are the number of lines in $WORDLISTPACKEDFILE"
 wc -l $WORDLISTPACKEDFILE
 
 echo "Don't forget to remove the temp wordlist $WORDLISTTEMPDIR/seclists-catted.txt"
+echo "rm $WORDLISTTEMPDIR/seclists-catted.txt"
 
 

@@ -1,4 +1,5 @@
 if [[ -z $1 ]]; then echo Usage: `basename "$0"` [list of files to check]; exit 2; fi
+if ! [[ -f $1 ]]; then echo File $1 not found; exit 3; fi
 
 #use file descriptor 6
 while read -u 6 filepath;

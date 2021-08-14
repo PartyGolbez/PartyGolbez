@@ -1,7 +1,7 @@
 DUPLICUTDIR=~/opt/duplicut
 HATECRACKDIR=/opt/hatecrack
 WORDLISTTEMPDIR=~/_temphatecrackwordlists
-WORDLISTFINALDIR=/opt/SecLists/Passwords/optimized_wordlists
+WORDLISTFINALDIR=/opt/SecLists/Passwords/packed_wordlists
 WORDLISTPACKEDFILE=$WORDLISTFINALDIR/seclists_packed.txt
 
 echo 'Checking that all the files exist...'

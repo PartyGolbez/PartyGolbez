@@ -26,6 +26,9 @@ echo 'Writing catted wordlists to temp file...'
 mkdir -p $WORDLISTTEMPDIR
 cat ordered-wordlists.txt | xargs cat > $WORDLISTTEMPDIR/seclists-catted.txt
 
+echo "Here are the number of lines in the temp file (before being duplicutted)"
+wc -l  $WORDLISTTEMPDIR/seclists-catted.txt
+
 # duplicut the mega-list
 echo 'Duplicutting the temp file...'
 mkdir -p $WORDLISTFINALDIR

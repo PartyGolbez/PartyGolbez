@@ -1,7 +1,6 @@
 #!/bin/bash
 DUPLICUTDIR=~/opt/duplicut
-HATECRACKDIR=/opt/hatecrack
-WORDLISTTEMPDIR=~/_temphatecrackwordlists
+WORDLISTTEMPDIR=~/_tempwordlists
 WORDLISTFINALDIR=/opt/seclists-ordered
 WORDLISTPACKEDFILE=$WORDLISTFINALDIR/seclists-ordered.txt
 
@@ -17,9 +16,6 @@ fi
 
 echo 'Installing duplicut... (it might be already installed, just ignore the errors in that case!)'
 git clone https://github.com/nil0x42/duplicut $DUPLICUTDIR && cd $DUPLICUTDIR && make
-
-echo 'Installing hatecrack'
-git clone https://github.com/trustedsec/hate_crack.git $HATECRACKDIR
 
 # write catted wordlists to temp file
 echo 'Writing catted wordlists to temp file...'
@@ -41,5 +37,3 @@ echo "Removing wordlist $WORDLISTTEMPDIR/seclists-catted.txt ..."
 rm $WORDLISTTEMPDIR/seclists-catted.txt
 
 echo "Finished"
-
-
